@@ -1,79 +1,62 @@
-<!DOCTYPE html>
+<!doctype html>
+
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
     <title>Chatbot</title>
-</head>
-<body>
+  </head>
+  <body>
 
-    <main id="container"></main>
+    <div id="container"></div>
 
-    <script crossorigin 
-    src="https://unpkg.com/react@18/umd/react.development.js">
-    </script>
-    <script crossorigin 
-    src="https://unpkg.com/react-dom@18/umd/react-dom.development.js">
-    </script>
-    <script crossorigin 
-    src="https://unpkg.com/@babel/standalone/babel.min.js">
+    <script
+      src="https://unpkg.com/react@18.3.1/umd/react.development.js"
+      crossorigin>
     </script>
     
-    <script type="text/babel">
-
-        function ChatInput() {
-            return (
-                <div>
-                    <input 
-                    type="text" 
-                    placeholder="Send a message to Chatbot" 
-                    size="30"
-                    />
-                    <button>Send</button>
-                </div>
-            );
-        };
-
-        function ChatMessage({ message, sender }) {
-            // if(sender === 'robot'){
-            //     return (
-            //         <div>
-            //             <img src="./assets/robot.png" width="50" />
-            //             {message}
-            //         </div>
-            //     );
-            // };
-
-            return (
-                <div>
-                    {sender === 'robot' && (
-                        <img src="./assets/robot.png" width="50" />
-                    )}
-                    {message}
-                    {sender === 'user' && (
-                        <img src="./assets/user.png" width="50" />
-                    )}
-                </div>
-            );
-        };
-           
-        function App() {
-            return (
-                <>
-                  <ChatInput/>
-                  <ChatMessage 
-                    message="Hello!" 
-                    sender="user"/> 
-                  <ChatMessage 
-                    message="Hello! How can I help you?" 
-                    sender="robot"/> 
-                </>
-            );
-        };
-        
-        const container = document.querySelector('#container');
-        ReactDOM.createRoot(container).render(<App/>);
-
+    <script
+      src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js"
+      crossorigin>
     </script>
-</body>
+
+    <script
+      src="https://alexgeracaotech.github.io/responses/response.js"
+      crossorigin>
+    </script>
+
+    <script
+      src="https://unpkg.com/@babel/standalone/babel.min.js"
+      crossorigin>
+    </script>
+
+    <script
+      src="./src/components/ChatInput.js"
+      type="text/babel">
+    </script>
+
+    <script
+      src="./src/components/ChatMessage.js"
+      type="text/babel">
+    </script>
+
+    <script
+      src="./src/components/ChatMessages.js"
+      type="text/babel">
+    </script>
+
+    <script
+      src="./src/components/App.js"
+      type="text/babel">
+    </script>
+
+    <script
+      src="./src/main.js"
+      type="text/babel">
+    </script>
+    
+  </body>
 </html>
